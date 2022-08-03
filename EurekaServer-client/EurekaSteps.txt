@@ -1,0 +1,11 @@
+cmd
+cd eurekanamingserver
+mvn package
+cd target
+java -jar  eurekanamingserver-0.0.1-SNAPSHOT.jar
+
+cmd:
+cd eurekanamingclient
+mvn package
+cd target
+java -jar eurekanamingclient-0.0.1-SNAPSHOT.jar
