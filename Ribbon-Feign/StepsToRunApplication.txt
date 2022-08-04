@@ -1,0 +1,35 @@
+cmd
+cd eurekanamingserver\target
+java -jar  eurekanamingserver-0.0.1-SNAPSHOT.jar
+
+cmd:
+java -jar zipkin-server-2.23.18-exec.jar
+Browser: localhost:9411
+
+cmd
+cd zuulgatewayserver\target
+java -jar zuulgatewayserver-0.0.1-SNAPSHOT.jar
+
+
+cmd
+cd currency-exchange-service
+mvn package
+cd target
+java -jar currency-exchange-service-0.0.1-SNAPSHOT.jar
+
+cmd
+cd currency-exchange-service\target
+java -jar -Dserver.port=8001 currency-exchange-service-0.0.1-SNAPSHOT.jar
+
+cmd
+cd currency-conversion-service
+mvn package
+cd target
+java -jar currency-conversion-service-0.0.1-SNAPSHOT.jar
+Browser:
+http://localhost:8100/currency-converter/from/USD/to/INR/quantity/1000
+
+http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/1000
+http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/1000
+http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/1000
+http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/1000
